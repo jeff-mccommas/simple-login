@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'app/theme/global.scss';
+@import 'app/theme/_variable-colors.scss';
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+@media (min-width: 1200px){
+  .container {
+    width: 970px;
+    max-width: 100%;
+}
+}
+
+.btn-secondary{
+  border: 2px solid #047c8b;
+  background-color: transparent;
+  font-size: 20px;
+  color: #047c8b;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+.btn-secondary:focus,.btn-secondary:hover {
+  border-color: #06525B;
+  color: #06525B;
+}
+
+.btn-secondary:active {
+  background-color: #e1eef0;
+}
+
+.btn-primary{
+  border: 2px solid #047c8b;
+  background-color: #047c8b;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  border-color: #06525B;
+  background-color: #206C75;
+}
+
+.btn-primary:active {
+  background-color: #06525B;
+}
+// .btn-primary:hover {
+//     color: #fff;
+//     background-color: #047c8b;
+//     border-color: #047c8b;
+// }
+// .btn-secondary:hover{
+//   border: 2px solid #047c8b;
+// }
+.btn-primary.disabled, .btn-primary:disabled{
+  opacity: 0.3;
+  border: 2px solid #047c8b;
+  background-color: #047c8b;
+  color: #fff;
+}
+
+// .font-icon{
+//   display: inline-block;
+// }
+.font-image{
+  background-size: 19px;
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+  position: relative;
+  top: 2px;
+}
+.font-arrow-circle-left{
+  margin-right: 8px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAexJREFUeNrUmLFOwzAQhh3TBwhv0EcIGxNtFmayMaZPUDKwIUElNgbIE5A3CCtiaMsLkJGNvgF9AATcRefKakPqs9M0nHRKUzn2F/v33TmeYFjv6u4MLgPwAHz4R7MZeAE+/7q9fDLt2zMY3IdLDD4G7wueLcBT8AygltYgNAP3FgBVQEndDHk1EAhwIZq1B4BJjEBoKfIaDbgaaihaXypZ0XCXEIL6ztf/PKhYjnOxe+vLk1P/+/XleWNpSJi5aNciJWBP08VbA7vDZjcdoV6URuI9QAgaM9bFOrbopIA38dAxRjjAlGNL0gZ3NjCEh9r90mVWkEFS7uAYDjpScQA6CSj6uthAUgLjWAgQhQYxBfcdQQLJDF4jDcJvCKIMcj1G4wlAZOqGluawJleh7q7Vrthm0hAC0/gN5xWhPcaIiWl7KTpipiAx5SFONaeWxqxCgwd+mGLNNLF+NCTWckZmjPaPADDUxBo6BrNVjSIpSnIsp/ghaCs3AVMgyJz5kE8wvgaTOILMJdUDC4usOVUwjjpZIIMKaKlFvsDl+QQYV32k+vbNLGalqcIoW4HQDkj2AJKoLL4qnqGQfceCFn4etwSBZ5y07lwz3fFxoowbABFuC/ERM8hZHbD+z5Gzc4fwTn2WaPNDza8AAwAAerwtrSjTOgAAAABJRU5ErkJggg==') center no-repeat;
+  background-size: 19px;
+}
+.font-arrow-circle-right{
+  margin-left: 8px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVFJREFUeNrMmAsNgzAQhtsqQAISmALAARKYA3AwB0hAwuaAoQAcMAfDQXddDtIsLOH6gP7JpWRZ2y+94+4KZwRJKQsYUrAELPvztyfYCNZzzh/MlWDzCKwCmyRdE86NbCEKQ4AtoMIUopHu1VBd0Ul/6na5yjPECnOGO2huwsA8WmsA8yUuYBjAYnasXmAXyDezwB/KEyAY7lnqbrHJFZW2zmCSY9RcgX6yOY1Ze84xvZNORTEIrB02Um9a8g048DUM1x+4PUoFFjAbqUDvNJgRT4aihDl8Fd96xoTnkjKZAtKCxcR6dfMBEhsWz3bP4oKFIs+uaXy4xnuwdo4gEg0io7YFwiATbmXWHPMHQ6A7cY1RgfSWILUGESEEtVnunRU9bDGNi94CUsnzVIXXGGHVrE9IYzXuHWDzHNR1IqgLVjBXzuAu4Ud/luChfKj5CDAADL7t+S4/ffYAAAAASUVORK5CYII=') center no-repeat;
+  background-size: 19px;
+}
+// .font-arrow-circle-left:before{
+//   content: " ";
+//   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAexJREFUeNrUmLFOwzAQhh3TBwhv0EcIGxNtFmayMaZPUDKwIUElNgbIE5A3CCtiaMsLkJGNvgF9AATcRefKakPqs9M0nHRKUzn2F/v33TmeYFjv6u4MLgPwAHz4R7MZeAE+/7q9fDLt2zMY3IdLDD4G7wueLcBT8AygltYgNAP3FgBVQEndDHk1EAhwIZq1B4BJjEBoKfIaDbgaaihaXypZ0XCXEIL6ztf/PKhYjnOxe+vLk1P/+/XleWNpSJi5aNciJWBP08VbA7vDZjcdoV6URuI9QAgaM9bFOrbopIA38dAxRjjAlGNL0gZ3NjCEh9r90mVWkEFS7uAYDjpScQA6CSj6uthAUgLjWAgQhQYxBfcdQQLJDF4jDcJvCKIMcj1G4wlAZOqGluawJleh7q7Vrthm0hAC0/gN5xWhPcaIiWl7KTpipiAx5SFONaeWxqxCgwd+mGLNNLF+NCTWckZmjPaPADDUxBo6BrNVjSIpSnIsp/ghaCs3AVMgyJz5kE8wvgaTOILMJdUDC4usOVUwjjpZIIMKaKlFvsDl+QQYV32k+vbNLGalqcIoW4HQDkj2AJKoLL4qnqGQfceCFn4etwSBZ5y07lwz3fFxoowbABFuC/ERM8hZHbD+z5Gzc4fwTn2WaPNDza8AAwAAerwtrSjTOgAAAABJRU5ErkJggg==');
+// }
+// .font-arrow-circle-right:before{
+//   content: " ";
+//   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVFJREFUeNrMmAsNgzAQhtsqQAISmALAARKYA3AwB0hAwuaAoQAcMAfDQXddDtIsLOH6gP7JpWRZ2y+94+4KZwRJKQsYUrAELPvztyfYCNZzzh/MlWDzCKwCmyRdE86NbCEKQ4AtoMIUopHu1VBd0Ul/6na5yjPECnOGO2huwsA8WmsA8yUuYBjAYnasXmAXyDezwB/KEyAY7lnqbrHJFZW2zmCSY9RcgX6yOY1Ze84xvZNORTEIrB02Um9a8g048DUM1x+4PUoFFjAbqUDvNJgRT4aihDl8Fd96xoTnkjKZAtKCxcR6dfMBEhsWz3bP4oKFIs+uaXy4xnuwdo4gEg0io7YFwiATbmXWHPMHQ6A7cY1RgfSWILUGESEEtVnunRU9bDGNi94CUsnzVIXXGGHVrE9IYzXuHWDzHNR1IqgLVjBXzuAu4Ud/luChfKj5CDAADL7t+S4/ffYAAAAASUVORK5CYII=');
+// }
+@media (max-width: 767px){
+  h1{
+      font-size: 22px !important;
+      color: #5e5e5e !important;
+  }
+}
+@include font-face(ProximaNovaSoft, assets/fonts/ProximaNovaSoft/PROXIMANOVASOFT-REGULAR);
+@include font-face(ProximaNovaSoftMd, assets/fonts/ProximaNovaSoft/PROXIMANOVASOFT-MEDIUM);
+@include font-face(ProximaNovaSoftSb, assets/fonts/ProximaNovaSoft/PROXIMANOVASOFT-SEMIBOLD);
+@include font-face(ProximaNovaSoftB, assets/fonts/ProximaNovaSoft/PROXIMANOVASOFT-BOLD);
+@include font-face(ProximaNova, assets/fonts/ProximaNova/ProximaNova-Regular);

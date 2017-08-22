@@ -1,0 +1,72 @@
+<div class="container">
+   <div class="row justify-content-around">
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <section class="content-header d-flex col-12">
+          <div class="img-container">
+            <img src="/assets/icons/{{selectedStudent?.image}}.png" alt="">
+          </div>
+          <div class="text-container text-left align-self-end">
+            <div class="class-name">{{selectedStudent?.name}}</div>
+            <h1>Secret Code:</h1>
+          </div>
+        </section>
+        <div class="col-12 col-sm-6">
+          <div id="choose-password" class="d-flex justify-content-start">
+              <div class="number first-col">
+                <span *ngFor="let icon of iconData.firstcol; let i=index">
+                    <input type="image" class="pwd-tile" id={{icon.row}}_{{icon.col}} [class.active]="icon.row === firstColVal?.row" (click)="onSelectIcon(icon)" src="{{icon.imageLocation}}" alt="{{icon.altText}}">
+                </span>
+              </div>
+              <div class="fruit second-col">
+                <span *ngFor="let icon of iconData.secondcol; let i=index">
+                    <input type="image" class="pwd-tile" id={{icon.row}}_{{icon.col}} [class.active]="icon.row === secondColVal?.row" (click)="onSelectIcon(icon)" src="{{icon.imageLocation}}" alt="{{icon.altText}}">
+                </span>
+              </div>
+              <div class="shape third-col">
+                <span *ngFor="let icon of iconData.thirdcol; let i=index">
+                    <input type="image" class="pwd-tile" id={{icon.row}}_{{icon.col}} [class.active]="icon.row === thirdColVal?.row" (click)="onSelectIcon(icon)" src="{{icon.imageLocation}}" alt="{{icon.altText}}">
+                </span>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+            <div id="wrong-password" *ngIf="(invalidPwd);else enteredPwd" class="d-flex flex-column justify-content-center align-items-center">
+              <span class="pwd-val-tile">
+                <img src="/assets/images/error.png" alt="Try Again">
+              </span>
+              <span class="errorimg-caption">Try Again</span>
+            </div>
+            <ng-template #enteredPwd>
+              <div id="selected-password" class="d-flex justify-content-between align-items-center">
+                <span class="firstVal pwd-val-tile">
+                  <img src="{{firstColVal?.imageLocation}}" alt="{{firstColVal?.altText}}">
+                </span>
+                <span class="secondVal pwd-val-tile">
+                  <img src="{{secondColVal?.imageLocation}}" alt="{{secondColVal?.altText}}">
+                </span>
+                <span class="thirdVal pwd-val-tile">
+                  <img src="{{thirdColVal?.imageLocation}}" alt="{{thirdColVal?.altText}}">
+                </span>
+              </div>
+            </ng-template>
+          <div id="button-box" class="d-flex justify-content-between">
+            <button class="btn btn-secondary" (click)="goBack()"><i class="font-image font-arrow-circle-left"></i>Back</button>
+            <button class="btn btn-primary" (click)="goNext()" [disabled]="disableNext">Start<i class="font-image font-arrow-circle-right"></i></button>
+          </div>
+          
+        </div>
+
+    <!--<p class="hidden-xl-down">
+      code-validator works!
+      access-token => {{JWTObj?.access_token}} <br>
+      expires_in => {{JWTObj?.expires_in}} <br>
+      token_type => {{JWTObj?.token_type}}<br>
+      scope => {{JWTObj?.scope}}
+    </p>-->
+      </div>
+    </div>
+   </div>
+</div>
+
+

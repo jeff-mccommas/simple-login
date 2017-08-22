@@ -1,0 +1,15 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change languagejhjgh"
+  },
+  "FOOTER": {
+    "POLICY": "PRIVACY POLICY GB",
+    "TERMSUSE": "TERMS OF USE GB",
+    "RIGHTSPERMISSION": "RIGHTS AND PERMISSIONS GB",
+    "MINIMUMREQUIREMENTS":"MINIMUM REQUIREMENTS GB",
+    "PIRACY": "REPORT PIRACY GB",
+    "PLATFORMSTATUS": "PLATFORM STATUS CENTER GB",
+    "TERMNCONDITION": "©2017 McGraw-Hill Education. All Rights Reserved. GB"
+  }
+}

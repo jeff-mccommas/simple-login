@@ -1,0 +1,32 @@
+let config: any = {
+  PORT: 7028,
+  API_VERSION: 'devv1',
+  APP_VERSION: '1.1.0',
+  CONNECT2_BASE_URL: 'https://connect2-api-qastg.mheducation.com',
+  ORG_BASE_URL: 'http://orgdev.mheducation.com',
+  APIKEY: 'd3mok3y-dev',
+  APIUSER: 'orgapiuser',
+  APIPWD: 'password1234',
+  IDM_BASE_URL: 'https://idm-dev.mheducation.com',
+  idm_jwt_url: 'https://idm-dev.mheducation.com/v1/token',
+  client_id:'UNITAS',
+  client_secret: 'GT@y1#LbEdx&R$Jvg7Hj5MyIkmq3eyQRSd&bOw&w',
+  grant_type: 'client_credentials',
+  grant_type_password: 'password',
+  auth: 'auth',
+  scope: 'provisioning fulluser',
+  C2_BASE_URL: 'https://openlearning-api-qastg.edmesh.com/',
+  C2_APIKEY: 'dO0DfdlcQqBsvn4GKpIPnSl95p8dyG',
+  C2_API: 'json',
+  C2_USER: 'entapiuser',
+  C2_PWD: '3nt1tl3D@p!',
+  C2_ENDPOINT: 'https://openlearning-api-qastg.edmesh.com/',
+  C2_REMEBER: '1',
+  C2_SESSION_APITASK: 'user-login',
+  C2_CLASS_APITASK: 'class',
+  C2_CLASS_STU_APITASK:'class-student-users',
+  ERR_500: '/public/500.html',
+  ERR_400: '/public/400.html'
+};
+
+export = config;

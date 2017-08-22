@@ -1,0 +1,58 @@
+.header{
+    background-color: #047C8B;
+    padding: 18px 0;
+    .navbar-brand img{
+        height: 35px;
+    }
+}
+.header-menu{
+    text-align: right;
+    padding-left: 0;
+
+    ul{
+        margin: 0;
+        button{
+            font-family: ProximaNova;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        button.dropdown-toggle{
+            background-color: #047C8B;
+            color: #fff;
+        }
+    }
+}
+.logo-container{
+    // padding-right: 15px;
+    padding-left: 15px;
+}
+.link-icon{
+    
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid #fff;
+    /* content: "?"; */
+    // border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-right: 5px;
+    font-size: 10px;
+}
+.link-text{
+    font-size: 14px;
+}
+.help-link{
+    color : #fff;
+    font-weight: normal;
+    font-family: ProximaNova;
+}
+@media (max-width: 767px){
+  .header{
+      padding: 7px 0;
+      .navbar-brand img{
+        height: 28px;
+    }
+  }
+}

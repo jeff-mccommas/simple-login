@@ -1,0 +1,31 @@
+section{
+    margin-bottom: 30px;
+    .img-container{
+        box-sizing: border-box;
+        margin-right: 12px;
+        img{
+            border: 1px solid #A4c9ce;
+            height: 80px;
+            width: 80px;
+        }
+    }
+}
+.text-container{
+    font-family: ProximaNovaSoft;
+    .class-name{
+        font-size: 12px;
+        color: #363636;
+    }
+}
+@media (max-width: 767px){
+  section{
+      margin-bottom: 20px;
+      .img-container{
+        img{
+            height:45px;
+            width: 45px;
+        }
+    }
+  }
+}
+

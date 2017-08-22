@@ -1,0 +1,26 @@
+<div class="container">
+   <div class="row justify-content-around">
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <section class="content-header d-flex col-12">
+          <div class="img-container">
+            <img src="/assets/icons/{{classData?.image}}.png" alt="">
+          </div>
+          <div class="text-container text-left align-self-end">
+            <div class="class-name">{{classData?.name}}</div>
+            <h1>Select your Name:</h1>
+          </div>
+        </section>
+        
+        <div class="col-12 col-sm-6" *ngFor="let student of students;let i=index">
+          <div class="input-group tiles" id={{student.id}} (click)="onSelect(student)">
+            <div class="input-group-addon tiles-image" id="btnGroupAddon_{{i}}">
+              <img src="/assets/icons/{{student.image}}.png" alt="{{student.name}}">
+            </div>
+            <input type="button" class="form-control tiles-text" placeholder="Input group example" value={{student.name}} attr.aria-describedby="btnGroupAddon_{{i}}">
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>

@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;   /*  flow as column, no wrap  */
+  flex-flow: column nowrap;
+}
+
+.footer {
+  padding: 10px;
+  background: lightgreen;
+}
+.site-content{
+    flex: 1;                            /*  fill remaining space  */
+    background-color: #eaeaea;
+
+}

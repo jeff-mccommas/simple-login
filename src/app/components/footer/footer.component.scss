@@ -1,0 +1,27 @@
+footer{
+    background-color: #434343;
+    color: #d0d0d0;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: normal;
+    font-family: ProximaNova;
+    .container{
+        padding: 9px 0 10px 0;
+        .footer-links a:first-child:after,.divider:after {
+            content: "|";
+            padding: 0 5px 0 5px;
+            position: relative;
+            top: -1px;
+            
+        }
+        a{
+            color: #d0d0d0;
+        }
+    }
+    .termsNcondition{
+       
+        font-weight: normal;
+       
+    }
+        
+}

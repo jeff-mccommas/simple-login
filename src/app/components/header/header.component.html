@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="logo-container col-auto">
+        <a class="navbar-brand left" href="#">
+          <img src="/assets/MHE_logo_desktop.png" height="28px" alt="MHE logo">
+        </a>
+      </div>
+      <div class="header-menu col">
+        <ul class="list-inline">
+          <li class="list-inline-item d-none">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn" id="dropdownBasic1" ngbDropdownToggle data-value="{{currentLang.languageValue}}">
+                  <span class="hidden-sm-down">{{currentLang.desktopLabel}}</span>
+                  <span class="hidden-md-up">{{currentLang.mobileLabel}}</span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item" *ngFor="let language of languages" (click)="onLanguageChange(language)">
+                  <span class="hidden-sm-down">{{language.desktopLabel}}</span>
+                  <span class="hidden-md-up">{{language.mobileLabel}}</span>
+                </button>
+                <!--<button class="dropdown-item">Another Action</button>
+                <button class="dropdown-item">Something else is here</button>-->
+              </div>
+            </div>
+          </li>
+          <li class="list-inline-item"><a href="{{config.helpUrl}}" target="_blank" class="help-link"><span class="link-icon rounded-circle" aria-label="help">?</span><span class="link-text hidden-sm-down">Help</span></a></li>
+          <!--<li class="list-inline-item">Nulla volutpat</li>-->
+        </ul>
+	        <!--<ul class="list-inline">
+              <li id="language_dropdown">
+                <div class="btn-group custom-dropdown">
+                  <div class="overlay"></div>
+                <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="visible-xs mobile">English (UK)</span><span class="hidden-xs desktop">English – Great Britain</span>&nbsp;&nbsp;&nbsp;<span class="arrow"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="hide"><a href="JavaScript:void(0);" data-mobile="English (UK)" data-value="en_GB">English – Great Britain</a></li>
+                  <li><a href="JavaScript:void(0);" data-mobile="English (US)" data-value="en_US">English – United States</a></li>
+                  <li><a href="JavaScript:void(0);" data-mobile="Español (LatAm)" data-value="es_MX">Español – Latinoamérica</a></li>
+                </ul>
+              </div>
+              </li>
+              <li><a href="https://connect2.zendesk.com/hc/en-us" target="_blank" class="help-link"><span class="link-icon">?</span><span class="hidden-xs">Help</span></a></li>       
+						</ul>-->
+      </div>
+    </div>
+  </div>
+</header>
