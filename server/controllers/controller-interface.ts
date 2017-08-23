@@ -13,8 +13,8 @@ export interface ControllerInterface {
     //getAccessToken(request: Request, response: Response): void;
     //getUserDetails(request: Request, response: Response): void;
     // verifyUserAgainstOrg(request: Request, response: Response): void;
-    validateContext(request: Request, response: Response): void;
-    getStudentDetails(request: Request, response: Response): void;
+    // validateContext(request: Request, response: Response): void;
+    // getStudentDetails(request: Request, response: Response): void;
 }
 
 export default ControllerInterface;

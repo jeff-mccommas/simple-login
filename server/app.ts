@@ -7,7 +7,9 @@ import path = require('path');
 import { ApplicationConfig as APP_CONFIG } from './config/app_config';
 import { AppRouter } from './routes/router';
 import { Controller } from './controllers/controller';
+import { IdmController } from './controllers/idm.controller';
 import { APIRequest } from './util/api-request';
+import { HttpHandle } from './util/http-handle';
 var https = require('https');
 // var http = require('http');
 // var fs = require('fs');
@@ -32,7 +34,8 @@ process.on('uncaughtException', function (err: any) {
 // since we have to override default '/' routing to handle in here, instead of serving index.html.
 let apiRequest = new APIRequest();
 let controller = new Controller(apiRequest);
-let routes = new AppRouter(controller);
+let idmController = new IdmController(apiRequest);
+let routes = new AppRouter(controller, idmController);
 app.use('/', routes.getRouter());
 app.use('/', express.static(path.resolve(__dirname, '../client')));
 app.use('/', routes.getDefaultRouter());
@@ -65,4 +68,4 @@ app.listen(PORT, function() {
     'port': PORT
   });
 });
-export let App = app;
+export default app;

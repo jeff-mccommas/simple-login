@@ -1,8 +1,6 @@
 import * as express from 'express';
 import { Request, Response, Router } from 'express';
-//import { Controller } from '../controllers/controller';
 import { AppRouterInterface } from './router-interface';
-
 let router: Router = express.Router();
 let defaultRouter: Router = express.Router();
 router.use(function (err, req, res, next) {  
@@ -22,7 +20,7 @@ router.use(function (err, req, res, next) {
 });
 export class AppRouter implements AppRouterInterface {
 
-  constructor(public controller: any) {
+  constructor(public controller: any, public idmController: any) {
     this.init();
   }
 
@@ -59,7 +57,7 @@ export class AppRouter implements AppRouterInterface {
       self.controller.getURLConfig(request, response);
     });
     router.post('/api/idmLogin', function (request: Request, response: Response) {
-      self.controller.getIdmData(request, response);
+      self.idmController.getIdmData(request, response);
     });
     // router.get('/api/jwt/middleware', function (request: Request, response: Response) {
     //   console.log('request.path :: %s', request.path);

@@ -3,6 +3,7 @@ let config: any = {
   API_VERSION: 'devv1',
   APP_VERSION: '1.1.0',
   CONNECT2_BASE_URL: 'https://connect2-api-qastg.mheducation.com',
+  IDM_LOGIN_REDIRECT: '/user/login.php?token=',
   ORG_BASE_URL: 'http://orgdev.mheducation.com',
   APIKEY: 'd3mok3y-dev',
   APIUSER: 'orgapiuser',

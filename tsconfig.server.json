@@ -12,6 +12,9 @@
     "baseUrl": "server",
     "outDir": "./dist/server"
   },
+  "files": [
+    "./server/app.ts"
+  ],
   "exclude": [
     "node_modules",
     "src",
