@@ -17,13 +17,6 @@ export class Prek12Service {
 
     constructor(private http: Http) { }
 
-    // getSections(): Promise<Section[]> {
-    //     // console.log(SECTIONS);
-    //     return this.http.get(this.sectionsUrl)
-    //             .toPromise()
-    //             .then(response => response.json() as Section[])
-    //             .catch(this.handleError);
-    // }
     getSection(id: number): Promise<Section> {
         // console.log(SECTIONS);
         const url = `${this.sectionsUrl}/${id}`;
