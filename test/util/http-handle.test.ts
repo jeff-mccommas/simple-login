@@ -6,7 +6,7 @@ import HttpHandle from '../../server/util/http-handle';
 import APIRequest from '../../server/util/api-request';
 import { ApplicationConfig as APP_CONFIG } from '../../server/config/app_config';
 const expect = chai.expect;
-let getParamName = require('../utility');
+let getParamName = require('../testHelper');
 let apiRequest = new APIRequest();
 let httpHandle = new HttpHandle(apiRequest);
 chai.use(chaiHttp);
@@ -45,8 +45,3 @@ describe('HTTP handle test cases', () => {
         }).catch(function(m) { throw new Error('FetchData'); });
     });
 });
-
-describe('Fetch data returns pormise', () => {
-    
-  });
-  

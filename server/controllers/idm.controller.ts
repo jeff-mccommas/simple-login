@@ -13,6 +13,9 @@ export class IdmController implements ControllerInterface {
   constructor(public apiRequest: APIRequest) {
     this.httpHandle = new HttpHandle(apiRequest);
   }
+  setCookieToken(token: string, response: Response) {
+    response.cookie('_token', token);
+  }
   async getIdmAccessToken(request: Request, response: Response): Promise <any> {
     try {
       //All parameters required for simplified login
@@ -55,6 +58,31 @@ export class IdmController implements ControllerInterface {
       }else{
         response.status(err.res.statusCode).json(err.res);
       }
+    });
+  }
+
+  getJWT(request: Request, response: Response): void {
+    const jwtFormData = {
+        client_id: APP_CONFIG.CLIENT_ID,
+        client_secret: APP_CONFIG.CLIENT_SECRET,
+        grant_type: APP_CONFIG.GRANT_TYPE,
+        scope: APP_CONFIG.SCOPE
+      },
+      jwtConfig = {
+        uri: APP_CONFIG.IDM_JWT_URL,
+        rejectMsg: 'Unable to fetch jwt token'
+      };
+      this.httpHandle.fetchData(jwtConfig, jwtFormData).then((jwt: any) => {
+      const jwtres = {
+        token: jwt.res.body.access_token,
+        expires_in: jwt.res.body.expires_in,
+        token_type: jwt.res.body.token_type,
+        scope: jwt.res.body.scope
+      }
+      this.setCookieToken(jwt.res.body.access_token, response);
+      response.json(jwt.res.body);
+    }, (errorMessage) => {
+      console.log(errorMessage);
     });
   }
 }

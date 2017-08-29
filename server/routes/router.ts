@@ -6,7 +6,7 @@ let defaultRouter: Router = express.Router();
 router.use(function (err, req, res, next) {  
     /* We log the error internaly */
     console.log(err);
-
+    
     /* 
      * Remove Error's `stack` property. We don't want 
      * users to see this at the production env 
@@ -20,7 +20,7 @@ router.use(function (err, req, res, next) {
 });
 export class AppRouter implements AppRouterInterface {
 
-  constructor(public controller: any, public idmController: any) {
+  constructor(public controller: any, public idmController: any, public connect2Controller: any, public appController:any) {
     this.init();
   }
 
@@ -41,20 +41,19 @@ export class AppRouter implements AppRouterInterface {
     //   self.controller.getSectionDetail(request, response);
     // });
     router.get('/api/context', function (request: Request, response: Response) {
-      self.controller.validateContext(request, response);
-      //response.send('tagId is set to ' + request.query.clid);
-    });
-    router.get('/api/context/:clid', function (request: Request, response: Response) {
-      self.controller.getStudentDetails(request, response);
-    });
-    router.get('/api/jwt', function (request: Request, response: Response) {
-      self.controller.getJWT(request, response);
-    });
-    router.get('/api/c2session', function (request: Request, response: Response) {
-      self.controller.getC2Session(request, response);
+      self.appController.validateContext(request, response);
     });
     router.get('/api/urlconfig', function (request: Request, response: Response) {
-      self.controller.getURLConfig(request, response);
+      self.appController.getURLConfig(request, response);
+    });
+    router.get('/api/context/:clid', function (request: Request, response: Response) {
+      self.connect2Controller.getStudentDetails(request, response);
+    });
+    router.get('/api/c2session', function (request: Request, response: Response) {
+      self.connect2Controller.getC2Session(request, response);
+    });
+    router.get('/api/jwt', function (request: Request, response: Response) {
+      self.idmController.getJWT(request, response);
     });
     router.post('/api/idmLogin', function (request: Request, response: Response) {
       self.idmController.getIdmData(request, response);
@@ -96,7 +95,7 @@ export class AppRouter implements AppRouterInterface {
     // For directing angular routes (or any other routes) to deafult path.
     // This will return the index.html only after the validation.
     defaultRouter.get('/*', function (request: Request, response: Response) {
-      self.controller.validateIP(request, response);
+      self.appController.validateIP(request, response);
    });
 
   }

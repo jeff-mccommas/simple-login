@@ -20,8 +20,8 @@ let idmController = new IdmController(apiRequest);
 chai.use(chaiHttp);
 
 describe('IDM controller test cases', () => {
-    var request:Request;
-    var response:Response;
+    var request: Request;
+    var response: Response;
     it('idmController.getIdmData function is defined', () => {
         expect(idmController.getIdmData).to.exist;
         expect((typeof idmController.getIdmData)).to.equals('function');
@@ -35,32 +35,41 @@ describe('IDM controller test cases', () => {
             body: validTestUser
         };
         var fetchDataReturnObj = idmController.getIdmAccessToken(request, response);
-            expect((typeof fetchDataReturnObj.then)).to.equals('function');
-        });
+        expect((typeof fetchDataReturnObj.then)).to.equals('function');
+    });
     it('Valid user should return 200', () => {
         request = {
             body: validTestUser
         };
-        return idmController.getIdmAccessToken(request, response).then(function(data){
+        return idmController.getIdmAccessToken(request, response).then(function (data) {
             expect(data.res.statusCode).to.equals(200);
         });
     });
-  it('InValid user should return 400', () => {
-    var request:Request;
-    var response:Response;
-    request = {
-        body: invalidTestUser
-    };
-    return idmController.getIdmAccessToken(request, response).then(function(data){
-        expect(data.res.statusCode).to.equals(400);
+    it('InValid user should return 400', () => {
+        var request: Request;
+        var response: Response;
+        request = {
+            body: invalidTestUser
+        };
+        return idmController.getIdmAccessToken(request, response).then(function (data) {
+            expect(data.res.statusCode).to.equals(400);
+        });
     });
-  });
-  it('/api/idmLogin should return 400 for invalid user', () => {
+    it('/api/idmLogin should return 400 for invalid user', () => {
         return chai.request(app)
             .post('/api/idmLogin')
             .type('application/json')
             .send(invalidTestUser).catch((err) => {
                 expect(err.response.statusCode).to.equals(400);
-              });;
-  });
+            });;
+    });
+    it('/api/jwt should return 200 status', (done) => {
+        chai.request(app)
+            .get('/api/jwt')
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res.body).to.have.property("access_token");
+                done();
+            });
+    });
 });
