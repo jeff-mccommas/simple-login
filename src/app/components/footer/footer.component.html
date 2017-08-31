@@ -1,13 +1,13 @@
 <footer class="footer">
   <div class="container text-center">
-    <div class="footer-links d-flex flex-column flex-md-row justify-content-center">
-      <div class="col-md-auto">
+    <div *ngIf="config" class="footer-links d-flex flex-column flex-md-row justify-content-center">
+      <div class="col-md-auto pr-0">
         <a target="_blank" href="{{config.policy}}">{{ 'FOOTER.POLICY' | translate }}</a>
         <a target="_blank" href="{{config.termsOfUse}}">{{ 'FOOTER.TERMSUSE' | translate }}</a>
-        <span class="divider hidden-sm-down"></span>
+        <span class="divider divider d-none d-md-inline-block"></span>
       </div>
       
-      <div class="col-md-auto">
+      <div class="col-md-auto pl-0">
         <a target="_blank" href="{{config.minimumRequirements}}">{{ 'FOOTER.MINIMUMREQUIREMENTS' | translate }}</a>
         <a target="_blank" href="{{config.platformStatus}}">{{ 'FOOTER.PLATFORMSTATUS' | translate }}</a>
       </div>

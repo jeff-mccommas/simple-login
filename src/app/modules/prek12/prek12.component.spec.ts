@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Prek12Component } from './prek12.component';
 
 describe('Prek12Component', () => {
@@ -8,6 +8,7 @@ describe('Prek12Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+        schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       declarations: [ Prek12Component ]
     })
     .compileComponents();

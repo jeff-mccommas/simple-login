@@ -25,6 +25,8 @@ id: number;
       .subscribe((classData: Section) => {
         this.classData = classData;
         this.students = classData.students;
+      }, (err: any) => {
+        console.log('error occurs');
       });
     this.id = +this.route.snapshot.params['id'];
     // //console.log(id);

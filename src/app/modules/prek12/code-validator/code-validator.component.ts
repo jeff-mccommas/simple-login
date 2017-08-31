@@ -79,6 +79,8 @@ export class CodeValidatorComponent implements OnInit {
           this.firstColVal= null;
           this.secondColVal= null;
           this.thirdColVal= null;
+        }else if(data.statusCode === 500){
+          window.location.href = '/error';
         }
       })
   }

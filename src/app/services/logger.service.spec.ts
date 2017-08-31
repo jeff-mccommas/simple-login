@@ -9,7 +9,15 @@ describe('LoggerService', () => {
     });
   });
 
-  it('should ...', inject([LoggerService], (service: LoggerService) => {
+  it('LoggerService should defined', inject([LoggerService], (service: LoggerService) => {
     expect(service).toBeTruthy();
+  }));
+  it('LoggerService should have method log', inject([LoggerService], (service: LoggerService) => {
+    expect(service.log).toBeTruthy();
+  }));
+  it('LoggerService should array logs that take log values', inject([LoggerService], (service: LoggerService) => {
+      service.log("Hello world")
+      var expectedOutput = ["Hello world"];
+      expect(service.logs.length).toBeGreaterThan(0);
   }));
 });

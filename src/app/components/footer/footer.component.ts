@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
     //  this.service.configVal.subscribe(data => {
     //   this.config = data;
     // });
-    this.config= this.service.getConfig();
+    this.config = this.service.getConfig();
   }
 
 }

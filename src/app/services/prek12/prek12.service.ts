@@ -6,7 +6,7 @@ import {Student} from '../../models/prek12/student';
 import {JWT} from '../../models/prek12/jwt';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class Prek12Service {
@@ -17,12 +17,19 @@ export class Prek12Service {
 
     constructor(private http: Http) { }
 
+    // getSections(): Promise<Section[]> {
+    //     // console.log(SECTIONS);
+    //     return this.http.get(this.sectionsUrl)
+    //             .toPromise()
+    //             .then(response => response.json() as Section[])
+    //             .catch(this.handleError);
+    // }
     getSection(id: number): Promise<Section> {
         // console.log(SECTIONS);
         const url = `${this.sectionsUrl}/${id}`;
         return this.http.get(url)
                 .toPromise()
-                .then(response => response.json() as Section)
+                .then(response => response)
                 .catch(this.handleError);
     }
     getStudentsFromSectionId(id: number): Promise<Section> {
@@ -48,13 +55,13 @@ export class Prek12Service {
         const url = `api/idmLogin`;
         return this.http.post(url, reqBody)
             .toPromise()
-                .then(response => response.json())
-                .catch(e => this.handleError(e.json()));
+                .then(response => response)
+                .catch(this.handleError);
     }
     showJWT(): Promise<any> {
         return this.http.get('api/jwt')
                 .toPromise()
-                .then(response => response.json().res as JWT)
+                .then(response => response)
                 .catch(this.handleError);
     }
 

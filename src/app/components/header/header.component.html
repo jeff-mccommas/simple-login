@@ -24,7 +24,7 @@
               </div>
             </div>
           </li>
-          <li class="list-inline-item"><a href="{{config.helpUrl}}" target="_blank" class="help-link"><span class="link-icon rounded-circle" aria-label="help">?</span><span class="link-text hidden-sm-down">Help</span></a></li>
+          <li class="list-inline-item" *ngIf="config"><a href="{{config.helpUrl}}" target="_blank" class="help-link"><span class="link-icon rounded-circle" aria-label="help">?</span><span class="link-text hidden-sm-down">Help</span></a></li>
           <!--<li class="list-inline-item">Nulla volutpat</li>-->
         </ul>
 	        <!--<ul class="list-inline">

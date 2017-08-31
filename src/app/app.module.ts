@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
-
+import { HttpClient,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -23,8 +23,12 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AppConfigService} from './services/app-config.service';
 import {LoggerService} from './services/logger.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ErrorInterceptor} from './services/error-interceptor';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
+export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
 // Add this function
@@ -37,18 +41,20 @@ export function initConfig(appConfigService: AppConfigService){
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [Http]
+                deps: [HttpClient]
             }
         }),
     Prek12Module,
@@ -62,6 +68,11 @@ export function initConfig(appConfigService: AppConfigService){
                 useFactory: initConfig,
                   deps: [AppConfigService],
                   multi: true
+              },
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: ErrorInterceptor,
+                multi: true,
               }],
   bootstrap: [AppComponent]
 })
